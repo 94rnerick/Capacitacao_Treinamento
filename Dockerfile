@@ -1,5 +1,5 @@
 # Use a imagem oficial do WordPress como base
-FROM wordpress:latest
+FROM wordpress:beta-php8.3-fpm-alpine
 
 # Mantenha a imagem atualizada
 RUN apt-get update && apt-get upgrade -y
