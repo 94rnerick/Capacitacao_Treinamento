@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  wordpress:
+    build: .
+    container_name: wordpress 
+    ports: # Mapeiamento de portas do host:container
+      - "80:80"
+      - "8080:8080"
+      
+    environment:
+      WORDPRESS_DB_HOST: db:3306 # Host e Porta do banco MySQL
+      WORDPRESS_DB_USER: wordpress #Usuário do Banco de Dados
+      WORDPRESS_DB_PASSWORD: wordpress # Senha do Banco de Dados
+      WORDPRESS_DB_NAME: wordpress #Nome do Banco de Dados
+    volumes:
+      - wordpress_data:/var/www/html #Definindo um volume para persistência dos dados
+    depends_on: #Dependência do Wordpress
+      - db
+
+  db:
+    image: mysql:5.7 # Imagem docker a ser utilizada
+    container_name: wordpress_db 
+    environment:
+      MYSQL_DATABASE: wordpress #Nome do Banco a ser criado
+      MYSQL_USER: wordpress #Usuário do banco de dados
+      MYSQL_PASSWORD: wordpress #Senha do banco de dados
+      MYSQL_ROOT_PASSWORD: GAud4mZby8F3SD6P #Senha do root do MySQL
+    volumes:
+      - db_data:/var/lib/mysql #Definindo um volume para persistência dos dados
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql # Adciona um script de inicialização para o MySQL
+
+volumes: #Definindo volumes dos serviços
+  wordpress_data:
+  db_data:
