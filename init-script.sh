@@ -6,7 +6,7 @@ echo "Script de inicialização iniciado em $(date)"
 
 # Atualizar lista de pacotes e instalar dependências
 sudo apt update -y
-sudo apt install -y docker.io curl
+sudo apt install -y docker.io curl wget
 
 # Adicionar ec2-user ao grupo docker
 sudo usermod -a -G docker ubuntu
@@ -27,9 +27,12 @@ FLUSH PRIVILEGES;
 EOF
 
 # Baixar arquivo docker compose 
-sudo curl -o "/home/ubuntu/app" "$file_url"
+sudo wget "https://raw.githubusercontent.com/94rnerick/Capacitacao_Treinamento/main/docker-compose.yml"
 
-sudo cp ./docker-compose.yml /usr/local/bin/
+# Baixar o Dockerfile
+sudo wget "https://raw.githubusercontent.com/94rnerick/Capacitacao_Treinamento/main/Dockerfile"
+
+sudo cp ./docker-compose.yml /usr/local/bin/  #Copiar o arquivo docker-compose.yml para pasta onde sera executado o serviço pelo systemd
 
 # Criar serviço systemd para Docker Compose
 cat <<EOF | sudo tee /etc/systemd/system/docker-compose-app.service
