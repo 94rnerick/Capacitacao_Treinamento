@@ -11,7 +11,3 @@ EXPOSE 8080
 ENTRYPOINT ["docker-entrypoint.sh"]
 
 CMD ["apache2-foreground"]
-
-# Exponha a porta 80
-EXPOSE 80
-EXPOSE 8080
