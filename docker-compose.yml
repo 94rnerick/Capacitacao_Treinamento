@@ -2,8 +2,10 @@ version: '3.8'
 
 services:
   wordpress:
-    build: .
-    container_name: wordpress 
+    container_name: wordpress
+    build:
+      dockerfile: Dockerfile
+      
     ports: # Mapeiamento de portas do host:container
       - "80:80"
       - "8080:8080"

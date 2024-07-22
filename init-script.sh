@@ -27,10 +27,10 @@ FLUSH PRIVILEGES;
 EOF
 
 # Baixar arquivo docker compose 
-sudo wget "https://raw.githubusercontent.com/94rnerick/Capacitacao_Treinamento/main/docker-compose.yml"
+sudo wget -O /home/ubuntu/app/docker-compose.yml "https://raw.githubusercontent.com/94rnerick/Capacitacao_Treinamento/main/docker-compose.yml"
 
 # Baixar o Dockerfile
-sudo wget "https://raw.githubusercontent.com/94rnerick/Capacitacao_Treinamento/main/Dockerfile"
+sudo wget -O /home/ubuntu/app/Dockerfile "https://raw.githubusercontent.com/94rnerick/Capacitacao_Treinamento/main/Dockerfile"
 
 sudo cp ./docker-compose.yml /usr/local/bin/  #Copiar o arquivo docker-compose.yml para pasta onde sera executado o serviço pelo systemd
 
