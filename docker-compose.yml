@@ -4,8 +4,9 @@ services:
   wordpress:
     container_name: wordpress
     build:
+      context: .
       dockerfile: Dockerfile
-      
+
     ports: # Mapeiamento de portas do host:container
       - "80:80"
       - "8080:8080"
