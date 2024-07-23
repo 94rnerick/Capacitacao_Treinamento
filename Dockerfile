@@ -1,7 +1,8 @@
 # Use a imagem oficial do WordPress como base
 FROM wordpress:latest
 
-WORKDIR /var/www/html # Diretorio de trabalho do container
+#Diretorio de trabalho do container
+WORKDIR /var/www/html  
 
 # Exponha a porta 80 e 8080
 EXPOSE 80

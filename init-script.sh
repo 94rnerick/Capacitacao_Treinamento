@@ -33,7 +33,6 @@ sudo wget -O /home/ubuntu/app/docker-compose.yml "https://raw.githubusercontent.
 sudo wget -O /home/ubuntu/app/Dockerfile "https://raw.githubusercontent.com/94rnerick/Capacitacao_Treinamento/main/Dockerfile"
 
 sudo cp ./docker-compose.yml /usr/local/bin/  #Copiar o arquivo docker-compose.yml para pasta onde sera executado o serviço pelo systemd
-sudo cp ./Dockerfile.yml /usr/local/bin/
 
 # Criar serviço systemd para Docker Compose
 cat <<EOF | sudo tee /etc/systemd/system/docker-compose-app.service
