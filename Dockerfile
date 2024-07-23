@@ -1,5 +1,5 @@
 # Use a imagem oficial do WordPress como base
-FROM wordpress:latest
+FROM wordpress:beta-php8.2-fpm-alpine
 
 WORKDIR /var/www/html # Diretorio de trabalho do container
 
