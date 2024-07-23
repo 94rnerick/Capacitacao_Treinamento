@@ -59,3 +59,11 @@ resource "aws_security_group" "sg_wordpress" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+# Exibir o IP e DNS Público para acessar o serviço
+output "instance_public_ip" {
+  value = aws_instance.wordpress.public_ip
+}
+
+output "instance_public_dns" {
+  value = aws_instance.wordpress.public_dns
+}
