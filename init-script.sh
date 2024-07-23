@@ -8,7 +8,7 @@ echo "Script de inicialização iniciado em $(date)"
 sudo apt update -y
 sudo apt install -y docker.io curl wget
 
-# Adicionar ec2-user ao grupo docker
+# Adicionar ubuntu ao grupo docker
 sudo usermod -a -G docker ubuntu
 
 # Instalar Docker Compose
