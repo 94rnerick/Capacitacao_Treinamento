@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
   wordpress:
-    container_name: wordpress
-    build:
+    container_name: wordpress # Nome do container
+    build: # Indica que sera realizado o build a partir do Dockerfile
       context: .
       dockerfile: Dockerfile
 
-    ports: # Mapeiamento de portas do host:container
+    ports: # Mapeamento de portas do host:container
       - "80:80"
       - "8080:8080"
       
