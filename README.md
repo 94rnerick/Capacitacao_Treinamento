@@ -1,29 +1,43 @@
+# Desafio de Provisionamento na AWS com Terraform
 
-#Acessando o Painel da AWS, atraves do serviço IAM, crie um usuário 
-#com permissão "AmazonEC2FullAccess"
-#Gerando access key e e secret para acessar com essa conta (Baixe seu acesso no botão download .csv)
+Este desafio faz parte de uma capacitação e tem como objetivo a criação de recursos e uma VM na AWS de forma automatizada pelo Terraform, já configurando um ambiente para executar o WordPress com banco de dados via Docker. A máquina ficará pronta para ser acessada via HTTP e configurar um site WordPress.
 
-#Vamos gerar um par de chaves para realizar o acesso na VM via SSH
-#No seu computador abra o terminal e execute o comando ssh-keygen
-#Escolha um local para armazenar essas chaves
-#Escolha uma "pass"  para chave
-#Lembre do caminho até essas chaves
-#(Caso esteja utilizando Windows, pode baixar o GITbash), pois pode utilizar ele para executar o terraform.
+## Passos para a Configuração
 
-#Baixe o terraform e instale de acordo com seu SO.
+### 1. Criar Usuário na AWS
+- Acesse o painel da AWS e navegue até o serviço **IAM**.
+- Crie um usuário com a permissão **AmazonEC2FullAccess**.
+- Gere uma **access key** e uma **secret key**. Não esqueça de baixar o arquivo `.csv` com suas credenciais.
 
-#Em seguida criar os arquivos de acordo com os comentarios#:
-#main.tf (arquivo de provisionamento da dos recursos), 
-#variables.tf (Descrição de variaveis utilizadas no main.tf), 
-#terraform.tfvars ("Conteudo das variaveis")
-#init-script.sh (script de inicialização da VM)
+### 2. Gerar Par de Chaves para Acesso SSH
+- Abra o terminal no seu computador e execute o seguinte comando:
+  ```bash
+  ssh-keygen
 
-#Abrir o terminal na pasta de trabalho com todos os arquivos acima e executar os comandos:
+Escolha um local para armazenar essas chaves.
 
-#terraform init # Para iniciar o terraform na pasta de trabalho
+Defina uma passphrase para a chave.
 
-#terraform plan # Para realizar o planejamento do provisionamento de recursos
+Lembre-se do caminho até essas chaves.
 
-#terraform apply # Para executar o provisionamento de todos os recursos.
+Obs: Se estiver utilizando Windows, você pode baixar o Git Bash para executar os comandos.
+
+3. Instalar o Terraform
+Baixe o Terraform e instale-o de acordo com seu sistema operacional.
+4. Criar os Arquivos Necessários
+Crie os seguintes arquivos em sua pasta de trabalho:
+- main.tf: arquivo de provisionamento dos recursos.
+- variables.tf: descrição das variáveis utilizadas no main.tf.
+- terraform.tfvars: conteúdo das variáveis.
+- init-script.sh: script de inicialização da VM.
+5. faça as devidas alterações para seus dados em terraform.tfvars.
+6. Executar os Comandos Terraform
+Abra o terminal na pasta de trabalho onde estão todos os arquivos criados e execute os seguintes comandos:
+
+
+- terraform init   # Para iniciar o Terraform na pasta de trabalho
+- terraform plan   # Para realizar o planejamento do provisionamento de recursos
+- terraform apply  # Para executar o provisionamento de todos os recursos
+
 
 
